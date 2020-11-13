@@ -1,0 +1,44 @@
+<div class="confirmPage">
+  <div class="container">
+    <h1>イベント内容</h1>
+    <%= form_with model: @inquiry, url: inquiries_thanks_path,method: :post, local: true do |f| %>
+      <div class="confirmForm_item">
+        <h3>イベント名</h3>
+        <div>
+          <%= f.hidden_field :name %> 
+          <%# パラメータとしてデータを渡している %>
+          <%= @inquiry.name%>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>送信先メールアドレス</h3>
+        <div>
+          <%= f.hidden_field :email %>
+          <%= @inquiry.email%>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>開催日時</h3>
+        <div>
+          <%= f.hidden_field :dates %>
+          <%= @inquiry.dates%>
+        </div>
+      </div>
+      <div class="confirmForm_item">
+        <h3>イベント内容</h3>
+        <div>
+          <% if @inquiry.content.empty? %>
+            未確定（後日公表）
+          <% elsse %>
+            <%= @inquiry.content%>
+          <% end %>
+            <%= f.hidden_field :content %>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= linl_to "入力画面に戻る", root_path, class: "btn btn-info"%>
+        <%= f.submit '送信する', :class => 'btn btn-primary'%>
+      </div>
+      <% end %>
+  </div>
+</div>

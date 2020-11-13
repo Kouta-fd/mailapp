@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eventname: MyString
+  email: MyString
+  dates: 2020-11-01
+  content: MyString
+
+two:
+  eventname: MyString
+  email: MyString
+  dates: 2020-11-01
+  content: MyString
